@@ -1,0 +1,11 @@
+SECRET_KEY=django-insecure-zk_-!21)#1=1ev60+)62056g*d#5-sr%x=1btdq=221s#+-usg
+
+DEBUG=True
+ALLOWED_HOSTS=.localhost, .my-kelompok.my.id, 103.150.196.162
+
+DB_ENGINE=django.db.backends.mysql
+DB_NAME=kelasb1
+DB_USER=root
+DB_PASSWORD=
+DB_HOST=127.0.0.1
+DB_PORT=3306
