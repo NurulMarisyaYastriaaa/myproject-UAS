@@ -3,7 +3,7 @@ from pathlib import Path
 from decouple import config
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
-BASE_DIR = Path(__file__).resolve().parent.parent
+BASE_DIR = Path(_file_).resolve().parent.parent
 
 
 # Quick-start development settings - unsuitable for production
@@ -27,12 +27,13 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'myproject',
     'ckeditor',
     'rest_framework',
 
-    'berita',
     'pengguna',
+    'berita',
+    'myproject',
+        
 ]
 
 MIDDLEWARE = [
@@ -79,7 +80,7 @@ DATABASES = {
         'PORT': config('DB_PORT'),
         'OPTIONS': {
             'init_command': "SET sql_mode='STRICT_TRANS_TABLES'",
-            'charset': 'utf8nb4',
+            'charset': 'utf8mb4',
         }
     }
 }
@@ -104,13 +105,11 @@ AUTH_PASSWORD_VALIDATORS = [
 ]
 
 # REST_FRAMEWORK = {
-#     # Use Django's standard django.contrib.auth permissions,
-#     # or allow read-only access for unauthenticated users.
-#     'DEFAULT_PERMISSION_CLASSES': [
-#         'rest_framework.permissions.DjangoModelPermissionsOrAnonReadOnly'
-#     ]
-# }
 
+#     'DEFAULT_PERMISSION_CLASSES' : [
+#         'rest_framework.permission.DJangoModelPermissionOrAnonReadOnly'
+#     ]   
+# }
 
 # Internationalization
 # https://docs.djangoproject.com/en/5.0/topics/i18n/
@@ -131,20 +130,19 @@ STATIC_URL = '/static/'
 STATICFILES_DIRS = (
     os.path.join (BASE_DIR, 'static'),
 )
-
-#STATIC_ROOT = os.path.join(BASE_DIR, 'static')
+# STATIC_ROOT = os.path.join(BASE_DIR, 'static')
 MEDIA_URL = '/media/'
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 
-LOGIN_REDIRECT_URL = '/autentikasi/login'
+
+LOGIN_REDIRECT_URL = '/authentikasi/login'
 LOGOUT_REDIRECT_URL = '/'
-LOGIN_URL = '/authentikasi/login'
+LOGIN_URL = '/authentikasi/login' # jika user belum login maka akan di arahkan disini
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/5.0/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
-
 
 # ckeditor config 
 CKEDITOR_UPLOAD_PATH = "upload/"
