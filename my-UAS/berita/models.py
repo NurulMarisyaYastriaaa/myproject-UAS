@@ -25,7 +25,7 @@ class Artikel(models.Model):
         config_name='special',
         external_plugin_resources=[(
             'youtube',
-            'http://localhost:8000/static/ckeditor_plugins/youtube/youtube/',
+            'http://marisya.my-kelompok8.my.id/static/ckeditor_plugins/youtube/youtube/',
             'plugin.js',
             )],
             blank=True,
